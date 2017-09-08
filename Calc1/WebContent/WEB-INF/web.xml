@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>CalculatorServlet</servlet-name>
+		<servlet-class>com.avizva.CalculatorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CalculatorServlet</servlet-name>
+		<url-pattern>/calculate</url-pattern>
+	</servlet-mapping>
+</web-app>

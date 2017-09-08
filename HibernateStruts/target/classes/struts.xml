@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	<package name="com.avizva.model" extends="struts-default">
+		<action name="saveData" class="com.avizva.model.Student" method="execute">
+			<result type="chain">index</result>
+		</action>
+		<action name="index" class="com.avizva.model.Student" method="viewAll">
+			<result name="success">index.jsp</result>
+		</action>
+		<action name="addStudent">
+			<result>addStudent.jsp</result>
+		</action>
+		<action name="update" class="com.avizva.model.Student" method="showUpdate">
+			<result name="success">update.jsp</result>
+		</action>
+		<action name="updateData" class="com.avizva.model.Student" method="updateData">
+			<result name="success" type="chain">index</result>
+		</action>
+		<action name="delete" class="com.avizva.model.Student" method="delete">
+			<result name="success" type="chain">index</result>
+		</action>
+	</package>
+</struts>

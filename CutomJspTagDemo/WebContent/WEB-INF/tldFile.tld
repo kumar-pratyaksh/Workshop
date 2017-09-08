@@ -1,0 +1,14 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+	<short-name>simple</short-name>
+	<uri>http://tomcat.apache.org/example-taglib</uri>
+	<tag>
+		<name>myTag</name>
+		<tag-class>com.MyTagHandler</tag-class>
+		<attribute>
+			<name>number</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+</taglib>

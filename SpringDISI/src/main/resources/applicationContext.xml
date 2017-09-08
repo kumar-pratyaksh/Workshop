@@ -1,0 +1,89 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+   <!-- bean definition & AOP specific configuration -->
+   <!-- <bean id="employee" class="com.avizva.spring.Employee">
+   	<property name="name" value="kp"></property>
+   	<property name="age" value="23"></property>
+   </bean>
+   
+   <bean id="address" class="com.avizva.spring.Address">
+   	<property name="city" value="Gurgaon"></property>
+   	<property name="country" value="India"></property>
+   	<property name="pin" value="244001"></property>
+   </bean>
+   <bean id="address2" class="com.avizva.spring.Address">
+   	<property name="city" value="Gurgaon1"></property>
+   	<property name="country" value="India1"></property>
+   	<property name="pin" value="244001"></property>
+   </bean>
+   
+   <bean id="employee2" class="com.avizva.spring.Employee">
+   	<property name="name" value="kp"></property>
+   	<property name="age" value="23"></property>
+   	<property name="address" ref="address"></property>
+   </bean>
+   
+   <bean id="student" class="com.avizva.spring.Student">
+   	<property name="name" value="kp"></property>
+   	<property name="roll" value="1"></property>
+   	<property name="hobbies">
+   		<list>
+   			<value>Reading</value>
+   			<value>Gaming</value>
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="student2" parent="student">
+   	<property name="addresses">
+   		<list>
+   			<ref bean="address"/>
+   			<ref bean="address2"/>
+   		</list>
+   	</property>
+   </bean>
+   
+   <bean id="user" class="com.avizva.spring.User">
+   	<property name="userId" value="1"></property>
+   	<property name="userName" value="kp"></property>
+   </bean>
+   <bean id="user2" class="com.avizva.spring.User">
+   	<property name="userId" value="2"></property>
+   	<property name="userName" value="kp1"></property>
+   </bean>
+   
+   <bean id="answer" class="com.avizva.spring.Answer">
+   	<property name="answerId" value="1"></property>
+   	<property name="answer" value="Answer 1"></property>
+   </bean>
+   <bean id="answer2" class="com.avizva.spring.Answer">
+   	<property name="answerId" value="2"></property>
+   	<property name="answer" value="Answer 2"></property>
+   </bean>
+   
+   <bean id="question" class="com.avizva.spring.Question">
+   	<property name="qid" value="1"></property>
+   	<property name="qname" value="WHat is java?"></property>
+   	<property name="answers">
+   		<map>
+   			<entry key-ref="user" value-ref="answer"></entry>
+   			<entry key-ref="user2" value-ref="answer2"></entry>
+   		</map>
+   	</property>
+   </bean> -->
+   
+   <bean class="com.avizva.spring.Address" >
+   	<property name="city" value="Gurgaon"></property>
+   	<property name="country" value="India"></property>
+   	<property name="pin" value="244001"></property>
+   </bean>
+   
+   <bean class="com.avizva.spring.Employee" id="employee" autowire="byType"></bean>
+   
+   
+
+</beans>

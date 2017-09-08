@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+
+<filter>
+	<filter-name>LoginFilter</filter-name>
+	<filter-class>com.filter.LoginFilter</filter-class>
+</filter>
+<filter-mapping>
+	<filter-name>LoginFilter</filter-name>
+	<url-pattern>/loginUser</url-pattern>
+</filter-mapping>
+</web-app>

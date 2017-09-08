@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="submitData" onsubmit="encrypt()">
+<input type="text" name="message" id="message">
+<br>
+<input type="submit" value="submit">
+</form>
+<script type="text/javascript">
+
+function encrypt() {
+	var message=document.getElementById('message').value;
+	var encryptedMessage="";
+	for(var i=0;i<message.length;i++){
+		encryptedMessage+=String.fromCharCode(message.charCodeAt(i)+1);
+	}
+	document.getElementById('message').value=encryptedMessage;
+}
+</script>
+
+</body>
+</html>

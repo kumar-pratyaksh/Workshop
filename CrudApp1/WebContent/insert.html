@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<form action="insertUser" method="get" onsubmit="return validateUser()">
+		<label>User Name:</label>
+		<input type="text" name="userName" id="userName" required>
+		<br>
+		<label>Password:</label>
+		<input type="password" name="password" id="password" required>
+		<br>
+		<label>Confirm Password:</label>
+		<input type="password" id="confirmPassword" required>
+		<br>
+		<label>Contact:</label>
+		<input type="text" name="contact" id="contact" pattern="[789]{1}[0-9]{9}" required>
+		<br>
+		<label>Email</label>
+		<input type="email" name="email" required>
+		<br>
+		<input type="submit">
+	</form>
+	<script type="text/javascript">
+		function validateUser(){
+			var password=document.getElementById("password");
+			var confirmPassword=document.getElementById("confirmPassword");
+			if(password.value!=confirmPassword.value){
+				alert("Password mismatch");
+				//e.preventDefault();
+				return false;
+			}
+			return true;
+			
+		}
+	
+	</script>
+
+</body>
+</html>

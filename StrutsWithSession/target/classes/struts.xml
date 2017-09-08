@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+   
+<struts>
+	<package name="com.avizva.model" extends="struts-default">
+		<action name="login">
+			<result>login.jsp</result>
+		</action>
+		<action name="doLogin" class="com.avizva.model.UserLoginAction" method="execute">
+			<result name="success">welcome.jsp</result>
+			<result name="failure">error.jsp</result>
+		</action>
+		<action name="logout" class="com.avizva.model.UserLoginAction" method="logout">
+			<result name="loggedOut">index.jsp</result>
+		</action>
+		<action name="profile" class="com.avizva.model.UserLoginAction" method="isLoggedIn">
+			<result name="loggedIn">welcome.jsp</result>
+			<result name="loggedOut">login.jsp</result>
+		</action>
+		
+	</package>
+</struts>

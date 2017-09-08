@@ -1,0 +1,83 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd ">
+
+   <!-- bean definition & AOP specific configuration -->
+   
+   <bean id="employee" class="com.avizva.springdi.Employee">
+	<constructor-arg value="KP"></constructor-arg>
+	<constructor-arg value="23" type="int"></constructor-arg>
+   </bean>
+   
+   <bean id="address" class="com.avizva.springdi.Address">
+   	<constructor-arg value="Delhi"></constructor-arg>
+   	<constructor-arg value="India"></constructor-arg>
+   	<constructor-arg value="244001" type="int"></constructor-arg>
+   </bean>
+   
+   <bean id="address2" class="com.avizva.springdi.Address">
+   	<constructor-arg value="Delhi1"></constructor-arg>
+   	<constructor-arg value="India"></constructor-arg>
+   	<constructor-arg value="244001" type="int"></constructor-arg>
+   </bean>
+ 
+ 	<bean id="employee2" class="com.avizva.springdi.Employee">
+ 		<constructor-arg value="kp1"></constructor-arg>
+ 		<constructor-arg value="24" type="int"></constructor-arg>
+ 		<constructor-arg ref="address"></constructor-arg>
+ 	</bean>
+ 	
+ 	<bean id="student" class="com.avizva.springdi.Student">
+ 		<constructor-arg value="kp"></constructor-arg>
+ 		<constructor-arg value="1" type="int"></constructor-arg>
+ 		<constructor-arg>
+ 			<list>
+ 				<value>Gaming</value>
+ 				<value>Reading</value>
+ 			</list>
+ 		</constructor-arg>
+ 	</bean>
+ 	
+ 	<bean id="student2" class="com.avizva.springdi.Student" parent="student">
+ 		<constructor-arg>
+ 			<list>
+ 				<ref bean="address"/>
+ 				<ref bean="address2"/>
+ 			</list>
+ 		</constructor-arg>
+ 	
+ 	</bean>
+ 	
+ 	<bean id="user1" class="com.avizva.springdi.User">
+ 		<constructor-arg value="1" type="int"></constructor-arg>
+ 		<constructor-arg value="kp"></constructor-arg>
+ 	</bean>
+ 	<bean id="user2" class="com.avizva.springdi.User">
+ 		<constructor-arg value="2" type="int"></constructor-arg>
+ 		<constructor-arg value="kp1"></constructor-arg>
+ 	</bean>
+ 	
+ 	<bean id="answer1" class="com.avizva.springdi.Answer">
+ 		<constructor-arg value="1" name="answerId"></constructor-arg>
+ 		<constructor-arg value="answer1"></constructor-arg>
+ 	</bean>
+ 	<bean id="answer2" class="com.avizva.springdi.Answer">
+ 		<constructor-arg value="2" name="answerId"></constructor-arg>
+ 		<constructor-arg value="answer2"></constructor-arg>
+ 	</bean>
+ 	
+ 	<bean id="question" class="com.avizva.springdi.Question">
+ 		<constructor-arg value="1" type="int"></constructor-arg>
+ 		<constructor-arg value="what is java?"></constructor-arg>
+ 		<constructor-arg>
+ 			<map>
+ 				<entry key-ref="user1" value-ref="answer1"></entry>
+ 				<entry key-ref="user2" value-ref="answer2"></entry>
+ 			</map>
+ 		</constructor-arg>
+ 	</bean>
+ 	
+
+</beans>
